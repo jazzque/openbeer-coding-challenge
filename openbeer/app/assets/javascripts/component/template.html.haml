@@ -1,0 +1,8 @@
+%div(ng-init="vm.initialize()")
+  %label
+    Search:
+    %input(ng-model="searchText")
+  %div(ng-show='vm.$scope.isLoad')
+    LOADING
+  %div.beers(ng-repeat="beer in vm.$scope.beers | filter:searchText" ng-show='!vm.$scope.isLoad')
+    {{ beer.id }}, {{ beer.name }}
