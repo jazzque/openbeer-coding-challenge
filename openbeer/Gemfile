@@ -13,6 +13,12 @@ gem "devise", '~> 4.0.0.rc1'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'will_paginate', '~> 3.1.0'
+gem 'angularjs-rails'
+gem 'rails-assets-angular'
+gem 'sprockets'
+gem 'sprockets-es6'
+gem 'angular-rails-templates'
 
 # Rails console enhancements
 gem 'awesome_print'
