@@ -4,7 +4,7 @@ app.directive('openbeer', [
       restrict: 'E',
       controller: 'OpenBeerController',
       controllerAs: 'vm',
-      templateUrl: 'component/template.html'
+      templateUrl: 'component/openbeer_template.html'
     }
   }
 ]);

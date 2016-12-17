@@ -6,7 +6,7 @@
   .main-content(ng-show="!vm.isLoad" ng-cloak)
     %ul.beers__items
 
-      %li.beers__item(ng-repeat="beer in vm.$scope.beers | orderBy:'name' | filter:search")
+      %li.beers__item(ng-repeat="beer in vm.$scope.beers | filter:search")
         .beers__header
           ID: {{ beer.id }}. NAME: {{ beer.name }}
         .beers__description-btn(ng-show='vm.hasDescription(beer)'
