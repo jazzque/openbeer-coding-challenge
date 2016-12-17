@@ -14,3 +14,9 @@
  *= require_self
  *= require_tree ./openbeer
  */
+
+body {
+  margin: 0 auto;
+  width: 900px;
+  font-family: avenir, helvetica, arial, sans-serif;
+}

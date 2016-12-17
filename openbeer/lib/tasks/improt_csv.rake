@@ -8,7 +8,7 @@ task :import_csv => :environment do |task|
     attrs = row.to_hash.except!("address2", "code", "website", "filepath", "last_mod")
     attrs["address"] = attrs.delete "address1"
 
-    Brewery.create(attrs)
+    Brewery.create!(attrs)
   end
 
   csv_text = File.open('beers.csv')

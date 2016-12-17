@@ -1,8 +1,35 @@
-%div(ng-init="vm.initialize()")
-  %label
-    Search:
-    %input(ng-model="searchText")
-  %div(ng-show='vm.$scope.isLoad')
-    LOADING
-  %div.beers(ng-repeat="beer in vm.$scope.beers | filter:searchText" ng-show='!vm.$scope.isLoad')
-    {{ beer.id }}, {{ beer.name }}
+.beers__wrapper(ng-init="vm.initialize()" ng-show='!vm.isLoad')
+  %label.beers__search
+    Search beer by name:
+    %input(ng-model="search.name")
+
+  .main-content(ng-show="!vm.isLoad" ng-cloak)
+    %ul.beers__items
+
+      %li.beers__item(ng-repeat="beer in vm.$scope.beers | orderBy:'name' | filter:search")
+        .beers__header
+          ID: {{ beer.id }}. NAME: {{ beer.name }}
+        .beers__description-btn(ng-show='vm.hasDescription(beer)'
+                                ng-init='trigger'
+                                ng-click='trigger = !trigger')
+          Toggle description
+        .beers__description(ng-show='trigger')
+          {{ beer.descript }}
+
+
+    %ul.brewery__items
+      %div.brewery__toggle(ng-init='trigger_two'
+                           ng-click='trigger_two = !trigger_two')
+        TOGGLE BREWERIES
+
+      %li.brewery__item(ng-repeat="brewery in vm.$scope.breweries | orderBy:'name'"
+                        ng-show='trigger_two')
+        .brewery__content(ng-click='breweries_beers = vm.find_beers(brewery.id)')
+          {{ brewery.name }}
+
+          %ul.brewery__additional-content__items(ng-show='breweries_beers')
+            %li.brewery__additional-content__item(ng-repeat='br_beer in breweries_beers')
+              ID: {{ br_beer.id }} NAME: {{ br_beer.name }}
+
+.beers__loading(ng-show='vm.isLoad')
+  Its like loading...
