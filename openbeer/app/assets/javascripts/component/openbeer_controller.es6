@@ -5,11 +5,24 @@ class OpenBeerController {
   }
 
   initialize(){
-    this.Service.get(this.params).$promise.then((response) => {
+    this.isLoad = true;
+
+    this.Service.get().$promise.then((response) => {
       this.$scope.beers = response.beers;
       this.$scope.breweries = response.breweries;
     });
-    this.$scope.isLoad = false;
+
+    setTimeout(() => { this.isLoad = false; }, 400);
+  }
+
+  hasDescription(beer){
+    return beer.descript != null;
+  }
+
+  find_beers(brewery_id){
+    return this.$scope.brewery_beers = _.filter(this.$scope.beers, (beer) => {
+      return beer.brewery_id == brewery_id;
+    })
   }
 }
 

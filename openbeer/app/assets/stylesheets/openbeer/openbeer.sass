@@ -1,2 +1,124 @@
-.beers
-  color: red
+.beers__wrapper
+
+  .beers__search
+    margin: 16px 0
+    font-size: 30px
+    text-align: center
+    min-height: 44px
+    font-weight: 400
+    line-height: 44px
+    display: flex
+    justify-content: center
+    align-items:  center
+
+    input
+      font-size: 14px
+      padding: 2px
+
+  .main-content
+    margin-top: 16px
+
+    .beers__items
+      padding-left: 0
+
+      .beers__item
+        background: #fefefe
+        z-index: 1
+        margin: 16px 0
+        box-shadow: 0 0 6px rgba(0,0,0,0.27)
+        border-radius: 2px
+        list-style: inside
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        transition: all ease 0.3s
+        &:hover
+          box-shadow: 0 0 8px rgba(0,0,0,0.47)
+        .beers__header
+          font-size: 16px
+          line-height: 1
+          font-weight: 400
+          height: 40px
+          margin: 6px 0
+          width: 100%
+          text-align: center
+          display: flex
+          align-items: center
+          justify-content: center
+        .beers__description-btn
+          border-radius: .3em
+          border-style: solid
+          border-width: 1px
+          color: #111
+          display: inline-block
+          font-family: avenir,helvetica,arial,sans-serif
+          letter-spacing: .15em
+          margin-bottom: .5em
+          padding: 6px
+          text-decoration: none
+          text-transform: uppercase
+          transition: all ease 0.3s
+          background-color: #f0f0f0
+          border-color: #f0f0f0
+          color: #555
+          font-size: 12px
+          cursor: pointer
+          &:hover
+            box-shadow: 0 0 4px rgba(0,0,0,0.37)
+        .beers__description
+          margin: 6px 12px
+          padding: 6px
+          box-shadow: 0 0 1px rgba(0,0,0,0.11), 0 1px 2px rgba(0,0,0,0.22)
+          background-color: rgba(0,0,0,0.03)
+          border-radius: 2px
+
+    .brewery__items
+      position: absolute
+      top: 0
+      left: 0
+
+      .brewery__toggle
+        border-radius: .3em
+        border-style: solid
+        border-width: 1px
+        color: #111
+        display: inline-block
+        font-family: avenir,helvetica,arial,sans-serif
+        letter-spacing: .15em
+        margin-bottom: .5em
+        padding: 8px
+        text-decoration: none
+        text-transform: uppercase
+        -webkit-transition: color .4s,background-color .4s,border .4s
+        background-color: rgb(223, 117, 20)
+        border-color: #f0f0f0
+        color: #555
+        font-size: 14px
+        cursor: pointer
+        &:hover
+          box-shadow: 0 0 4px rgba(0,0,0,0.37)
+      .brewery__item
+        font-size: 18px
+        color: #333
+        padding: 5px 0 0 20px
+        box-shadow: 0 0 4px rgba(0,0,0,0.37)
+        opacity: 0.96
+        text-decoration: none
+        list-style: none
+        margin: 0 0 2px 0
+        background: #F7F5F2
+        transition: all ease 0.3s
+        &:hover
+          box-shadow: 0 0 4px rgba(0,0,0,0.57)
+        .brewery__content
+          cursor: pointer
+          .brewery__additional-content__items
+            .brewery__additional-content__item
+              list-style: none
+
+.beers__loading
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)

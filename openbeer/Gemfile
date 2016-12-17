@@ -19,6 +19,7 @@ gem 'rails-assets-angular'
 gem 'sprockets'
 gem 'sprockets-es6'
 gem 'angular-rails-templates'
+gem 'rails-assets-lodash'
 
 # Rails console enhancements
 gem 'awesome_print'
